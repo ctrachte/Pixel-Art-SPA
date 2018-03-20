@@ -1,16 +1,11 @@
 # Pixel Art Maker Project
 
-## Table of Contents
+**Goal: to create a single-page web app with jQuery that fulfilles the following User stories:**
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+  - As a developer, I want the user to feel immersed by the experience with dynamic styling.
+  - As a developer, I want to keep this code as simple as possible to make it lightweight and easy to maintain.
 
-## Instructions
-
-To get started, open `designs.js` and start building out the app's functionality.
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+  - As a user, I want to be able to select the size of the image to edit.
+  - As a user, I want to be able to select the color to change each Pixel to.
+  - As a user, I want to be able to change each pixel to the desired color.
+  - As a user, I want the site to be responsive so I can enjoy the experience. 
