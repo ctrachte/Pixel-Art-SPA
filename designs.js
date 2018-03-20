@@ -33,4 +33,5 @@ function removeGrid () {
 
 var x, y = selectGridSize();
 $('form').submit(makeGrid(x,y));
+$('#clear').on(click, removeGrid());
 // $('#colorPicker').on('select', selectColor());
