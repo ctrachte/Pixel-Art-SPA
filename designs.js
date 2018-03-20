@@ -1,37 +1,38 @@
-// Select color input
-// function selectColor () {
-//   var color = this.color;
-//   return color;
-// };
+// Define our constant variables:
+const submit = $('#submitButton'); //submit button
+const inputWidth = $('#inputWidth'); // contains value of width
+const inputHeight = $('#inputHeight'); // contains value of height
+const pixelCanvas = $('#pixelCanvas'); // container for the grid
+const pixelColor = $('#colorPicker'); // container for user chosen color
+const defaultColor = 'white'; // Cell default color
+const clear = $('#clear'); // Clear grid button
+// Select color input:
 
-// Select size input
+// Creates a grid of the desired size when called:
 
-function selectGridSize () {
-  var x = $('inputWidth').val();
-  var y = $('inputHeight').val();
-  return x, y;
-};
-
-// When size is submitted by the user, call makeGrid()
-
-function makeGrid(x,y) {
+function makeGrid() {
+  let x = inputWidth.val();
+  let y = inputHeight.val();
   for (var rows = 0; rows < x; rows++) {
-    $("#pixelCanvas").append("<tr class='row'></tr>");
+    pixelCanvas.append("<tr class='row'></tr>");
     };
   for (var columns = 0; columns < y; columns++) {
-    $(".row").append("<td class='col'>x</td>");
+    $(".row").append("<td class='col'></td>");
     };
 };
 
-// Remove the grid if the user is not satisfied:
-
+// Removes the grid:
 function removeGrid () {
-  $("#pixelCanvas").children.remove();
-
+  $(".row").remove();
+  $(".col").remove();
 };
 
+// Sets the grid size when the user clicks submit:
+submit.on('click', function (event) {
+  event.preventDefault(); // prevents the grid from resetting to default value.
+  removeGrid(); // removes the previous grid if there was one.
+  makeGrid(); // creates the grid of the desired size.
+});
 
-var x, y = selectGridSize();
-$('form').submit(makeGrid(x,y));
-$('#clear').on(click, removeGrid());
-// $('#colorPicker').on('select', selectColor());
+// Clear button if the user wants to remove the grid:
+clear.click(removeGrid());
