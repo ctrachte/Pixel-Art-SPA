@@ -11,8 +11,8 @@ const clear = $('#clear'); // Clear grid button
 // Creates a grid of the desired size when called:
 
 function makeGrid() {
-  let x = inputWidth.val();
-  let y = inputHeight.val();
+  let x = (inputWidth.val() > 100) ? 100 : inputWidth.val();
+  let y = (inputWidth.val() > 100) ? 100 : inputWidth.val();
   for (var rows = 0; rows < x; rows++) {
     pixelCanvas.append("<tr class='row'></tr>");
     };
