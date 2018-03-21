@@ -5,6 +5,8 @@ const inputHeight = $('#inputHeight'); // contains value of height
 const pixelCanvas = $('#pixelCanvas'); // grid
 const pixelColor = $('#colorPicker'); // user chosen color
 const clear = $('#clear'); // Clear grid button
+const newTitle = $('input[name="name"]').val(); // title of the next new canvas
+
 // checks to see if input is greater than 100pixels
 function checkInput(x, type) {
 	if (x > 100) {
@@ -20,17 +22,19 @@ function checkInput(x, type) {
 function makeGrid() {
 	let x = checkInput(inputWidth.val(), 'Width');
 	let y = checkInput(inputHeight.val(), 'Height');
+	$('#canvasContainer').prepend("<h2 class='canvasTitle'>" + newTitle + "</h2>");
 	for (var rows = 0; rows < x; rows++) {
 		pixelCanvas.append("<tr class='row'></tr>");
 	};
 	for (var columns = 0; columns < y; columns++) {
-		$(".row").append("<td class='col'></td>");
+		$(".row").append("<td class='col shadow'></td>");
 	};
 };
 // Removes the grid
 function removeGrid() {
 	$(".row").remove();
 	$(".col").remove();
+	$('.canvasTitle').remove();
 };
 // Sets the grid size when the user clicks submit
 submit.on('click', function(event) {

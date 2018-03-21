@@ -25,6 +25,9 @@
 			<div class="inputContainer shadow">
 				Grid Width (Max: 100): <input id="inputWidth" max="100" min="1" name="width" type="number" value="1">
 			</div>
+			<div class="inputContainer shadow">
+				Name Your Masterpiece: <input id="newCanvasInput" name="name" type="text" value="Cool Canvas Name Here">
+			</div>
       <button id="submitButton" type="submit">Create Canvas</button> <button id="clear">Delete Canvas</button>
 		</form>
 	</div>
@@ -32,8 +35,9 @@
     <input id="colorPicker" type="color" value="#4286f4">
      <img src="https://image.ibb.co/dyvjVH/paint_bucket.png" alt="paint_bucket" border="0">
   </div>
-	<h2>Your Canvas:</h2>
-	<table id="pixelCanvas"></table>
+	<div id='canvasContainer'>
+		<table id="pixelCanvas"></table>
+	</div>
 	<script src="designs.js">
 	</script>
 </body>
