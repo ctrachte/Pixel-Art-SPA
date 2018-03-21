@@ -2,17 +2,25 @@
 const submit = $('#submitButton'); //submit button
 const inputWidth = $('#inputWidth'); // contains value of width
 const inputHeight = $('#inputHeight'); // contains value of height
-const pixelCanvas = $('#pixelCanvas'); // container for the grid
-const pixelColor = $('#colorPicker'); // container for user chosen color
-const defaultColor = 'white'; // Cell default color
+const pixelCanvas = $('#pixelCanvas'); // grid
+const pixelColor = $('#colorPicker'); // user chosen color
 const clear = $('#clear'); // Clear grid button
 // Select color input:
 
 // Creates a grid of the desired size when called:
 
+function checkInput (x, type) {
+  if (x > 100) {
+    alert( type + " too large! " + type + " set to 100px" );
+    return 100;
+  } else {
+    return x;
+  };
+};
+
 function makeGrid() {
-  let x = (inputWidth.val() > 100) ? 100 : inputWidth.val();
-  let y = (inputHeight.val() > 100) ? 100 : inputHeight.val();
+  let x = checkInput(inputWidth.val(), 'Width');
+  let y = checkInput(inputHeight.val(), 'Height');
   for (var rows = 0; rows < x; rows++) {
     pixelCanvas.append("<tr class='row'></tr>");
     };
@@ -36,3 +44,11 @@ submit.on('click', function (event) {
 
 // Clear button if the user wants to remove the grid:
 clear.click(removeGrid());
+
+// Change color when the user clicks a pixel:
+
+pixelCanvas.on('click', '.col', function (event) {
+  let clickedCell = $(event.target);
+  let currentColor = pixelColor.val();
+  (clickedCell.attr('bgcolor')!==currentColor) ? clickedCell.attr('bgcolor', currentColor) : clickedCell.attr('bgcolor', 'white');
+});
