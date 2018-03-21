@@ -27,7 +27,6 @@ td {
 	width: 20px;
 }
 td:hover {
-	background-color: grey;
 	cursor: pointer;
 }
 input[type=number] {

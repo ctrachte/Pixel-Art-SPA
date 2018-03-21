@@ -5,7 +5,6 @@ const inputHeight = $('#inputHeight'); // contains value of height
 const pixelCanvas = $('#pixelCanvas'); // grid
 const pixelColor = $('#colorPicker'); // user chosen color
 const clear = $('#clear'); // Clear grid button
-const newTitle = $('input[name="name"]').val(); // title of the next new canvas
 
 // checks to see if input is greater than 100pixels
 function checkInput(x, type) {
@@ -20,14 +19,15 @@ function checkInput(x, type) {
 };
 // Creates a grid of the desired size when called
 function makeGrid() {
-	let x = checkInput(inputWidth.val(), 'Width');
-	let y = checkInput(inputHeight.val(), 'Height');
-	$('#canvasContainer').prepend("<h2 class='canvasTitle'>" + newTitle + "</h2>");
+	let x = checkInput(inputWidth.val(), 'Width'); // width checked if too large
+	let y = checkInput(inputHeight.val(), 'Height'); // height checked if to large
+	let newTitle = $('input[name="name"]').val(); // title of the next new canvas
+	$('#canvasContainer').prepend("<h2 class='canvasTitle'>" + newTitle + "</h2>"); // adds canvas title
 	for (var rows = 0; rows < x; rows++) {
-		pixelCanvas.append("<tr class='row'></tr>");
+		pixelCanvas.append("<tr class='row'></tr>"); // adds rows to table
 	};
 	for (var columns = 0; columns < y; columns++) {
-		$(".row").append("<td class='col shadow'></td>");
+		$(".row").append("<td class='col shadow'></td>"); // adds columns to rows
 	};
 };
 // Removes the grid
@@ -42,8 +42,7 @@ submit.on('click', function(event) {
 	removeGrid(); // removes the previous grid if there was one.
 	makeGrid(); // creates the grid of the desired size.
 });
-// Clear button if the user wants to remove the grid
-clear.click(removeGrid());
+
 // Change color when the user clicks a pixel
 pixelCanvas.on('click', '.col', function(event) {
 	let clickedCell = $(event.target); // saving the exact cell to a variable
