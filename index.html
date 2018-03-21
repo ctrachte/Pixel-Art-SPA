@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pixel Art Maker!</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
-    <link rel="stylesheet" href="styles.css">
+	<title>Pixel Art Painter!</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js">
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Nosifer' rel='stylesheet' type='text/css'>
+	<link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Pixel Art Maker</h1>
-
-    <h2>Choose Grid Size</h2>
-    <form id="sizePicker">
-
-      <div id="heightContainer">
-        Grid Height  (Max: 100):
-        <input type="number" id="inputHeight" name="height" min="1" max="100" value="1">
-      </div>
-
-      <div id="widthContainer">
-        Grid Width  (Max: 100):
-        <input type="number" id="inputWidth" name="width" min="1" max="100" value="1">
-      </div>
-      
-        <input type="submit" id="submitButton">
-        <button id="clear">Delete Grid</button>
-    </form>
-
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker" value="#ff0000">
-
-    <h2>Design Canvas</h2>
-    <table id="pixelCanvas"></table>
-
-    <script src="designs.js"></script>
+	<h1 id='appTitle'>Pixel Art Painter</h1>
+	<div id="myInfo">
+		<div>by Caleb Trachte</div>
+     <a href="https://github.com/ctrachte" target='blank'><img src="https://image.ibb.co/hAssHx/github_512.png" alt="github_512" border="0"></a>
+      <a href="https://www.synthetic-insights.blog" target='blank'><img src="https://image.ibb.co/hCocjc/wordpress.png" alt="wordpress" border="0"></a>
+       <a href="https://www.linkedin.com/in/caleb-trachte" target='blank'><img src="https://image.ibb.co/kDjYPc/linkedin.png" alt="linkedin" border="0"></a>
+	</div>
+	<div id='dimensionContainer'>
+		<h2>Choose Your Canvas Dimensions:</h2>
+		<form id="sizePicker" name="sizePicker">
+			<div class="inputContainer shadow">
+				Grid Height (Max: 100): <input id="inputHeight" max="100" min="1" name="height" type="number" value="1">
+			</div>
+			<div class="inputContainer shadow">
+				Grid Width (Max: 100): <input id="inputWidth" max="100" min="1" name="width" type="number" value="1">
+			</div><input id="submitButton" type="submit"> <button id="clear">Delete Grid</button>
+		</form>
+	</div>
+	<div id='colorContainer'><input id="colorPicker" type="color" value="#4286f4">
+     <img src="https://image.ibb.co/dyvjVH/paint_bucket.png" alt="paint_bucket" border="0">
+  </div>
+	<h2>Your Canvas:</h2>
+	<table id="pixelCanvas"></table>
+	<script src="designs.js">
+	</script>
 </body>
 </html>

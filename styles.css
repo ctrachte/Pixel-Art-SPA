@@ -1,48 +1,80 @@
 body {
-    text-align: center;
+	text-align: center;
+	background-color: white;
 }
-
 h1 {
-    font-family: Monoton;
-    font-size: 70px;
-    margin: 0.2em;
+	font-family: Nosifer;
+	font-size: 70px;
+	margin: 0.2em;
 }
-
 h2 {
-    margin: 1em 0 0.25em;
+	margin: 1em 0 0.25em;
 }
-
 h2:first-of-type {
-    margin-top: 0.5em;
+	margin-top: 0.5em;
 }
-
-table,
-tr,
-td {
-    border: 1px solid black;
+table, tr, td {
+	border: 1px solid black;
 }
-
 table {
-    border-collapse: collapse;
-    margin: 0 auto;
+	border-collapse: collapse;
+	margin: 0 auto;
 }
-
 tr {
-    height: 20px;
+	height: 20px;
 }
-
 td {
-    width: 20px;
+	width: 20px;
 }
-
+td:hover {
+	background-color: grey;
+	cursor: pointer;
+}
 input[type=number] {
-    width: 6em;
+	width: 6em;
 }
-
-#widthContainer, #heightContainer {
+img {
+	width: 50px;
+	height: 50px;
   padding: 5px;
-  margin: auto;
 }
-div:hover {
-  background-color: grey;
+.inputContainer {
+	font-family: ;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+	max-width: auto;
+	border: 1px solid grey;
+}
+.shadow {
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	transition: box-shadow 0.3s ease-in-out;
+}
+.shadow:hover {
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+#dimensionContainer {
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+	max-width: 550px;
+	border-style: outset;
+}
+#colorContainer {
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+	width: 150px;
+	height: 100px;
+}
+#colorPicker {
+	height: 50px;
+	width: 50px;
+}
+#myInfo {
+	padding: 5px;
+	margin-bottom: 10px;
 }
